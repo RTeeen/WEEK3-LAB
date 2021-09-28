@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page on MyController";
+    int code = 0;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Home Page on MyController</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <ul>
+        
+        @foreach (var Item in ViewBag.file) {
+            code++;
+            <li><a asp-area="" asp-controller="My" asp-action="FileInfo" asp-route-id="@System.IO.Path.GetFileName(Item)">@System.IO.Path.GetFileName(Item)</a></li>
+        }
+    </ul>
+</div>
